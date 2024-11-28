@@ -11,7 +11,8 @@
     "prettier": "prettier  \"**/*.+(json|yml|css|md|mdx|ts|tsx)\" --check",
     "prepare": "husky",
     "prettier:fix": "prettier --write \"**/*.+(json|yml|css|md|mdx|ts|tsx)\"",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
