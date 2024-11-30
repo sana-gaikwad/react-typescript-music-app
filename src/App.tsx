@@ -1,16 +1,17 @@
-import { Layout } from "./components/Layout";
+import { Layout } from "./components/Layout"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { RouterWrapper } from "./route"
+
+const queryClient = new QueryClient()
 
 function App() {
   return (
-    <Layout>
-      <div className="max-w-2xl mx-auto text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Music Festival Directory</h1>
-        <p className="text-lg text-gray-600">
-          A modern starter kit with TypeScript, ESLint, Prettier, and Husky pre-commit hooks.
-        </p>
-      </div>
-    </Layout>
-  );
+    <QueryClientProvider client={queryClient}>
+      <Layout>
+        <RouterWrapper />
+      </Layout>
+    </QueryClientProvider>
+  )
 }
 
-export default App;
+export default App

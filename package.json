@@ -9,7 +9,6 @@
     "lint:fix": "eslint --fix \"src/**/*.{ts,tsx,js,jsx,cjs,mjs}\"",
     "lint": "eslint \"src/**/*.{ts,tsx,js,jsx,cjs,mjs}\"",
     "prettier": "prettier  \"**/*.+(json|yml|css|md|mdx|ts|tsx)\" --check",
-    "prepare": "husky",
     "prettier:fix": "prettier --write \"**/*.+(json|yml|css|md|mdx|ts|tsx)\"",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
@@ -18,7 +17,8 @@
     "@tanstack/react-query": "^5.62.0",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.0.1"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.61.6",
