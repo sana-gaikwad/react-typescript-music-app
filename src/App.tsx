@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { RouterWrapper } from "./route"
-import { Layout } from "./components/Layout"
+import { RouterWrapper } from "@/route"
+import { Layout } from "@/components"
 
 const queryClient = new QueryClient()
 

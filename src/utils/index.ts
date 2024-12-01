@@ -1,0 +1,1 @@
+export { getBandRecordLabelMap } from "./getBandRecordLabelInfo"

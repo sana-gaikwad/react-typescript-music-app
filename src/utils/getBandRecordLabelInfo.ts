@@ -1,4 +1,4 @@
-import { Festival, RecordLabelBandsInfo } from "../types"
+import { Festival, RecordLabelBandsInfo } from "@/types"
 
 /**
  * Sorts strings alphabetically in a case-insensitive manner

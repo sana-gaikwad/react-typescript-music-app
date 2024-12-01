@@ -1,8 +1,8 @@
-import { MusicFestivalsList } from "@/components/MusicFestivalList"
-import { useFestivals } from "@/hooks/useFestivals"
-import { getBandRecordLabelMap } from "@/utils/getBandRecordLabelInfo"
+import { MusicFestivalsList } from "@/components"
+import { useFestivals } from "@/hooks"
+import { getBandRecordLabelMap } from "@/utils"
 
-export const MusicFestivals = () => {
+export const MusicFestivalsPage = () => {
   const { data, isPending, isError } = useFestivals()
   if (isPending) {
     return <div>Loading...</div>
@@ -15,9 +15,5 @@ export const MusicFestivals = () => {
   }
 
   const organizedData = getBandRecordLabelMap(data)
-  return (
-    <div>
-      <MusicFestivalsList recordLabelBandInfo={organizedData} />
-    </div>
-  )
+  return <MusicFestivalsList recordLabelBandInfo={organizedData} />
 }
