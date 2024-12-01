@@ -7,6 +7,15 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["lucide-react"],
   },
+  server: {
+    proxy: {
+      "/api/festivals": {
+        target: "https://eacp.energyaustralia.com.au",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/festivals/, "/codingtest/api/v1/festivals"),
+      },
+    },
+  },
   test: {
     coverage: {
       provider: "v8",
