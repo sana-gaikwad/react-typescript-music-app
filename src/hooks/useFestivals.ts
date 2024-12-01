@@ -1,5 +1,5 @@
+import { fetchFestivals } from "@/api/festivals"
 import { useQuery } from "@tanstack/react-query"
-import { fetchFestivals } from "../api/festivals"
 
 export const useFestivals = () => {
   const { isPending, isError, data } = useQuery({

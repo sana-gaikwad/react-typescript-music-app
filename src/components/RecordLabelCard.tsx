@@ -1,5 +1,4 @@
 import { Disc } from "lucide-react"
-
 import { ReactNode } from "react"
 
 interface RecordLabelCardProps {

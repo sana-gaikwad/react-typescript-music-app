@@ -1,6 +1,6 @@
 import { Music } from "lucide-react"
-import { RecordLabelBandsInfo } from "../types"
 import { RecordLabelCard } from "./RecordLabelCard"
+import { RecordLabelBandsInfo } from "@/types"
 
 interface MusicFestivalsListProps {
   recordLabelBandInfo: RecordLabelBandsInfo[]

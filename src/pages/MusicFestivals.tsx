@@ -1,6 +1,6 @@
-import { MusicFestivalsList } from "../components/MusicFestivalList"
-import { useFestivals } from "../hooks/useFestivals"
-import { bandRecordLabelMap } from "../utils/getBandRecordLabelInfo"
+import { MusicFestivalsList } from "@/components/MusicFestivalList"
+import { useFestivals } from "@/hooks/useFestivals"
+import { bandRecordLabelMap } from "@/utils/getBandRecordLabelInfo"
 
 export const MusicFestivals = () => {
   const { data, isPending, isError } = useFestivals()

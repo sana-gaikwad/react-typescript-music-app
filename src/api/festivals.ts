@@ -1,4 +1,4 @@
-import { Festival } from "../types"
+import { Festival } from "@/types"
 
 const FESTIVALS_API_BASE_URL = "/api/festivals"
 
