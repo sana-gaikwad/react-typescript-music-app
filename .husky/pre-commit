@@ -1,0 +1,4 @@
+echo "Running pre-commit hook..."
+
+yarn lint-staged --verbose
+echo "Completed pre-commit hook."
