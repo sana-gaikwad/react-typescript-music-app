@@ -26,6 +26,7 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       include: ["**/utils/*.{js,ts,jsx,tsx,vue}"],
+      exclude: ["**/utils/index.{js,ts,jsx,tsx,vue}"],
     },
   },
 })
