@@ -11,7 +11,7 @@ export const MusicFestivals = () => {
     return <div>Error loading music festivals data</div>
   }
   if (!data) {
-    return <div>No data available. Try again!</div>
+    return <div>No data available. Please refresh the page and try again!</div>
   }
 
   const organizedData = getBandRecordLabelMap(data)
