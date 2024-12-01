@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { Festival } from "../../types"
-import { bandRecordLabelMap } from "../../utils/getBandRecordLabelInfo"
+import { getBandRecordLabelMap } from "../../utils/getBandRecordLabelInfo"
 
 describe("bandRecordLabelMap", () => {
   it("should correctly organize data by Record Label, Band and Festival", () => {
@@ -21,7 +21,7 @@ describe("bandRecordLabelMap", () => {
         bands: [{ name: "Band C", recordLabel: "Record Label 2" }],
       },
     ]
-    const result = bandRecordLabelMap(festivals)
+    const result = getBandRecordLabelMap(festivals)
     expect(result).toEqual([
       {
         recordLabel: "Record Label 1",
@@ -61,7 +61,7 @@ describe("bandRecordLabelMap", () => {
         bands: [{ name: "Band A", recordLabel: "" }],
       },
     ]
-    const results = bandRecordLabelMap(festivals)
+    const results = getBandRecordLabelMap(festivals)
     expect(results).toEqual([
       {
         recordLabel: "Record Label 1",
@@ -92,7 +92,7 @@ describe("bandRecordLabelMap", () => {
         bands: [{ name: "Band A", recordLabel: "Record Label 1" }],
       },
     ]
-    const results = bandRecordLabelMap(festivals)
+    const results = getBandRecordLabelMap(festivals)
     expect(results).toEqual([
       {
         recordLabel: "Record Label 1",
@@ -111,7 +111,7 @@ describe("bandRecordLabelMap", () => {
   })
   it("should return an empty array when there are no festivals", () => {
     const festivals: Festival[] = []
-    const results = bandRecordLabelMap(festivals)
+    const results = getBandRecordLabelMap(festivals)
     expect(results).toEqual([])
   })
 
@@ -139,7 +139,7 @@ describe("bandRecordLabelMap", () => {
         ],
       },
     ]
-    const results = bandRecordLabelMap(festivals)
+    const results = getBandRecordLabelMap(festivals)
     expect(results).toEqual([
       {
         recordLabel: "Record Label 1",
@@ -160,6 +160,76 @@ describe("bandRecordLabelMap", () => {
             bandName: "Band D",
             festivalNames: ["Gamma Festival"],
           },
+        ],
+      },
+    ])
+  })
+  it("should sort record labels, bands, and festivals alphabetically", () => {
+    const festivals: Festival[] = [
+      {
+        name: "Delta Festival",
+        bands: [
+          { name: "Band D", recordLabel: "Record Label 2" },
+          { name: "Band C", recordLabel: "Record Label 2" },
+        ],
+      },
+      {
+        name: "Alpha Festival",
+        bands: [
+          { name: "Band B", recordLabel: "Record Label 1" },
+          { name: "Band A", recordLabel: "Record Label 1" },
+        ],
+      },
+    ]
+    const result = getBandRecordLabelMap(festivals)
+    expect(result).toEqual([
+      {
+        recordLabel: "Record Label 1",
+        bands: [
+          {
+            bandName: "Band A",
+            festivalNames: ["Alpha Festival"],
+          },
+          {
+            bandName: "Band B",
+            festivalNames: ["Alpha Festival"],
+          },
+        ],
+      },
+      {
+        recordLabel: "Record Label 2",
+        bands: [
+          {
+            bandName: "Band C",
+            festivalNames: ["Delta Festival"],
+          },
+          {
+            bandName: "Band D",
+            festivalNames: ["Delta Festival"],
+          },
+        ],
+      },
+    ])
+  })
+
+  it("should sort record labels, bands, and festivals case-insensitively", () => {
+    const festivals: Festival[] = [
+      {
+        name: "alpha festival",
+        bands: [
+          { name: "Band B", recordLabel: "record label 1" },
+          { name: "band a", recordLabel: "Record Label 1" },
+        ],
+      },
+    ]
+    const results = getBandRecordLabelMap(festivals)
+    console.log(JSON.stringify(results))
+    expect(results).toEqual([
+      {
+        recordLabel: "record label 1",
+        bands: [
+          { bandName: "band a", festivalNames: ["alpha festival"] },
+          { bandName: "Band B", festivalNames: ["alpha festival"] },
         ],
       },
     ])

@@ -1,6 +1,6 @@
 import { MusicFestivalsList } from "@/components/MusicFestivalList"
 import { useFestivals } from "@/hooks/useFestivals"
-import { bandRecordLabelMap } from "@/utils/getBandRecordLabelInfo"
+import { getBandRecordLabelMap } from "@/utils/getBandRecordLabelInfo"
 
 export const MusicFestivals = () => {
   const { data, isPending, isError } = useFestivals()
@@ -14,7 +14,7 @@ export const MusicFestivals = () => {
     return <div>No data available. Try again!</div>
   }
 
-  const organizedData = bandRecordLabelMap(data)
+  const organizedData = getBandRecordLabelMap(data)
   return (
     <div>
       <MusicFestivalsList recordLabelBandInfo={organizedData} />
