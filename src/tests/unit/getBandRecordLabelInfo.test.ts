@@ -223,7 +223,6 @@ describe("bandRecordLabelMap", () => {
       },
     ]
     const results = getBandRecordLabelMap(festivals)
-    console.log(JSON.stringify(results))
     expect(results).toEqual([
       {
         recordLabel: "record label 1",
