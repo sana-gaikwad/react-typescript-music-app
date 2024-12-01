@@ -1,5 +1,15 @@
 import { Festival, RecordLabelBandsInfo } from "../types"
 
+/**
+ * Organizes the given festivals into a list of record labels and their bands.
+ * Each record label is an object with a "recordLabel" property and a "bands" property.
+ * The "bands" property is an array of objects, each with a "bandName" property and a "festivalNames" property.
+ * The "festivalNames" property is an array of strings representing the festival names
+ * that the band has played at.
+ *
+ * @param {Festival[]} festivals The festivals to organize.
+ * @returns {RecordLabelBandsInfo[]} The organized record labels and bands.
+ */
 export const bandRecordLabelMap = (festivals: Festival[]): RecordLabelBandsInfo[] => {
   // Initialize an empty array to store the final result
   const recordLabelBandMap: RecordLabelBandsInfo[] = []
