@@ -1,1 +1,1 @@
-export { MusicFestivalsPage } from "./MusicFestivalsPage"
+export { MusicFestivals as MusicFestivalsPage } from "./MusicFestivals"
